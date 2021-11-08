@@ -1,0 +1,12 @@
+{
+    "editor.insertSpaces": true,
+    "git.ignoreLimitWarning": true,
+    "java.project.sourcePaths": [
+        "bundle/src"
+    ],
+    "java.project.referencedLibraries": [
+        "~/.vscode/extensions/toem-de.impulse-*/impulse/plugins/*.jar"
+    ],
+    "java.project.outputPath": "bundle/bin",  
+
+}

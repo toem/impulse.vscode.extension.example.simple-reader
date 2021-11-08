@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.toem.toolkits.pattern.serializer">
+      <serializer
+            contentType="de.toem.impulse.contentType.example"
+            defaultConfiguration="true"
+            description="%serializer.description"
+            enabled="true"
+            group="%serializer.group"
+            id="de.toem.impulse.serializer.examples.simple-reader"
+            label="%serializer.label"
+            reader="de.toem.impulse.extension.examples.reader.SimpleReader">
+      </serializer>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="de.toem.impulse.contentType.record"
+            file-extensions="example"
+            id="de.toem.impulse.contentType.example"
+            name="%content-type.name"
+            priority="normal">
+      </content-type>
+   </extension>
+ <extension
+       point="de.toem.toolkits.pattern.group">
+    <group
+          description="%group.description"
+          icon="icons/extension.png"
+          id="de.toem.impulse.group.examples"
+          label="%group.label">
+    </group>
+ </extension>
+</plugin>

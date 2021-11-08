@@ -1,0 +1,53 @@
+{
+	"name": "impulse.vscode.extension.example.simple-reader",
+	"displayName": "impulse.vscode.extension.example.simple-reader",
+	"description": "",
+	"publisher": "toem-de",
+	"homepage": "https://www.toem.de",
+	"author": {
+		"name": "Thomas Haber"
+	},
+	"license": "SEE LICENSE IN LICENSE.md",
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"icon": "bundle/icons/extension.png",
+	"categories": [
+		"Visualization"
+	],
+	"keywords": [
+		"impulse"
+	],
+	"galleryBanner": {
+		"color": "#F2F2F2",
+		"theme": "light"
+	},
+	"private": true,	
+	"extensionKind": [
+		"workspace"
+	],
+	"extensionDependencies": [
+		"toem-de.impulse"
+	],
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"contributes": {},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -w -p ./"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^3.0.2",
+		"@typescript-eslint/parser": "^3.0.2",
+		"eslint": "^7.1.0",
+		"typescript": "^4.0.2",
+		"@types/vscode": "^1.50.0"
+	},
+	"impulseBundles":[
+		"bundle"
+	]
+}

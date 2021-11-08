@@ -1,0 +1,4 @@
+out/
+*.vsix
+.git/
+node_modules/
