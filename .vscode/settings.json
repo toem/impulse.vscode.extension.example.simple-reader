@@ -5,7 +5,10 @@
         "bundle/src"
     ],
     "java.project.referencedLibraries": [
-        "~/.vscode/extensions/toem-de.impulse-*/impulse/plugins/*.jar"
+        "~/.vscode/extensions/toem-de.impulse-*/impulse/*.jar",
+        "~/.vscode/extensions/toem-de.impulse-*/impulse/plugins/*.jar",
+        "/home/gitpod/.vscode-remote/extensions/toem-de.impulse-*/impulse/*.jar",
+        "/home/gitpod/.vscode-remote/extensions/toem-de.impulse-*/impulse/plugins/*.jar"
     ],
     "java.project.outputPath": "bundle/bin",  
 
