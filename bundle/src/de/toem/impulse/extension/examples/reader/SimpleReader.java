@@ -26,6 +26,7 @@ import de.toem.impulse.serializer.AbstractSingleDomainRecordReader;
 import de.toem.impulse.serializer.ParseException;
 import de.toem.impulse.values.Logic;
 import de.toem.impulse.values.StructMember;
+import de.toem.toolkits.core.Utils;
 import de.toem.toolkits.pattern.element.ICover;
 import de.toem.toolkits.pattern.properties.IPropertyModel;
 import de.toem.toolkits.pattern.threading.IProgress;
@@ -241,6 +242,8 @@ public class SimpleReader extends AbstractSingleDomainRecordReader {
         // current = currentTime; // TimeBase.ms
         // IIntegerSamplesWriter writer = (IIntegerSamplesWriter) getWriter(int1);
         // writer.write(current, false, value);
+
+        Utils.log("parses a line");
 
         changed = changed > CHANGED_SIGNALS ? changed : CHANGED_SIGNALS;
     }
