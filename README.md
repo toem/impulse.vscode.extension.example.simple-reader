@@ -175,3 +175,86 @@ Just enter [https://www.gitpod.io#https://github.com/toem/impulse.impulse.vscode
     * [J001 Creating records](https://toem.de/index.php/resources/all-documents/77-j01-creating-records)
     * [Documentation](https://toem.de/index.php/resources/documentation) - scroll down to impulse jdk
 
+
+## Step 12 : Write samples
+
+* The example code adds signals in the 'writeExampleSamples()' function. Uncomment both 'addExampleSignals()' and 'writeExampleSamples()' function, when adding own signals.
+* Whenever samples are written, update the change flag 'changed = changed > CHANGED_SIGNALS ? changed : CHANGED_SIGNALS;'
+* Use this manual pages to understand signal.
+    * [J001 Creating records](https://toem.de/index.php/resources/all-documents/77-j01-creating-records)
+* If your changes are working continue with 13
+
+
+## Step 13 : Modify the reader IDs
+
+* Open the plugin.xml under bundels
+* Modify the id of the serializer 'id="de.toem.impulse.serializer.examples.simple-reader"'  (e.g to my.serializer)
+* Modify the id of the contentType 'id="de.toem.impulse.contentType.example"' and the relation in the serializer 'contentType="de.toem.impulse.contentType.example"' (e.g to my.contentType)
+* Optionally change the class name both in the java file and in the plugin.xml
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?eclipse version="3.4"?>
+        <plugin>
+        <extension
+                point="de.toem.toolkits.pattern.serializer">
+            <serializer
+                    contentType="de.toem.impulse.contentType.example"
+                    defaultConfiguration="true"
+                    description="%serializer.description"
+                    enabled="true"
+                    group="%serializer.group"
+                    id="de.toem.impulse.serializer.examples.simple-reader"
+                    label="%serializer.label"
+                    reader="de.toem.impulse.extension.examples.reader.SimpleReader">
+            </serializer>
+        </extension>
+        <extension
+                point="org.eclipse.core.contenttype.contentTypes">
+            <content-type
+                    base-type="de.toem.impulse.contentType.record"
+                    file-extensions="example"
+                    id="de.toem.impulse.contentType.example"
+                    name="%content-type.name"
+                    priority="normal">
+            </content-type>
+        </extension>
+        <extension
+            point="de.toem.toolkits.pattern.group">
+            <group
+                description="%group.description"
+                icon="icons/extension.png"
+                id="de.toem.impulse.group.examples"
+                label="%group.label">
+            </group>
+        </extension>
+        </plugin>
+
+
+## Step 13 : Modify the extension manifest 'package.json'
+
+* Every Visual Studio Code extension needs a manifest file: [Extension Manifest](https://code.visualstudio.com/api/references/extension-manifest)
+* Edit the 'package.json' file, especially modify these values:
+
+        "name": "my.simple-reader",
+        "displayName": "mysimple-reader",
+        "description": "",
+        "publisher": "myself",
+        "homepage": "https://www.myside.de",
+        "author": {
+            "name": "ItsMe"
+        },
+        "license": "MIT",
+        "version": "0.1.0",
+        "icon": "bundle/icons/extension.png",
+
+## Step 14 : Create the extension vsx package file
+
+* Do a:
+
+        vcse package
+
+
+## Step 15 : Publish
+
+* (VsCode publishing)[https://code.visualstudio.com/api/working-with-extensions/publishing-extension]
+* (OpenVsx publishing)[https://github.com/eclipse/openvsx/wiki]
