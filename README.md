@@ -25,6 +25,10 @@ Just enter [https://www.gitpod.io#https://github.com/toem/impulse.impulse.vscode
     -  redhat.java
     -  vscjava.vscode-java-debug
 
+
+https://user-images.githubusercontent.com/9350222/142420838-75f7ee47-695a-4dba-83d5-f2b1cdad3f08.mp4
+
+
 ## Step1 : npm install
 
 * Open a terminal in vscode and do a friendly
